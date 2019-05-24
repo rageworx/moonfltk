@@ -45,10 +45,15 @@ static int CheckIndex(lua_State *L, Fl_Menu_ *menu, int arg)
 /* Given the menu and the pathname at arg, returns the item's index or raises an error */
     {
 //  const char *pathname = luaL_optstring(L, arg, NULL); 
-    const char *pathname = lua_isnoneornil(L, arg) ? NULL : luaL_checkstring(L, arg);
-    if(pathname) 
-        return menu->find_index(pathname);
-    return luaL_argerror(L, arg, "cannot find item");
+    if(lua_isinteger(L, arg))
+        return lua_tointeger(L, arg);
+    else
+       {
+        const char *pathname = lua_isnoneornil(L, arg) ? NULL : luaL_checkstring(L, arg);
+        if(pathname) 
+            return menu->find_index(pathname);
+        return luaL_argerror(L, arg, "cannot find item");
+        }
     }
 
 static const char *PushIndex(lua_State *L, Fl_Menu_ *menu, int index)
@@ -144,13 +149,11 @@ static int ItemDelete(lua_State *L, Fl_Menu_ *menu, Fl_Menu_Item *item)
  */
 static void CommonCallback(Fl_Widget *menu_, void *ud_)
     {
-    lua_State *L = main_lua_state;
+    ud_t* ud = (ud_t*)ud_;
+    if (!ud) return;
+    lua_State *L = ud->L;
     if (!L) return;
     Fl_Menu_ *menu = (Fl_Menu_*)menu_;
-    ud_t *ud = (ud_t*)ud_; /* note that this is the ud bound to the menu item, not to the menu */
-    //printf("Menu callback: menu: %p, menu_item: %p\n", userdata(menu), ud);
-    if(!ud)
-        { unexpected(L); return; }
     if(ud->cbref == LUA_NOREF) 
         return; /* item has no callback */
 
@@ -206,6 +209,7 @@ static int Menu_add(lua_State *L)
     memset(ud, 0, sizeof(ud_t));
     ud->cbref = cbref;
     ud->argref = argref;
+    ud->L = L;
     
     int index = menu->add(pathname, shortcut, setCallback ? CommonCallback : NULL, setCallback ? ud : NULL, flags);
     if(moonfltk_trace_objects) 

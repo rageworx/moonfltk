@@ -4,4 +4,5 @@
 *.o
 core.*
 *.a
+*.html
 local/

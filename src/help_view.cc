@@ -93,10 +93,10 @@ static int Help_Viewfind(lua_State *L)
 
 static const char* Help_Func(Fl_Widget *p, const char *uri)
     {
-    lua_State *L = main_lua_state;
+    ud_t* ud = userdata(p);
+    if (!ud) return NULL;
+    lua_State *L = ud->L;
     if (!L) return NULL;
-    ud_t *ud = userdata(p);
-    if(!ud) return NULL;
     if(pushvalue(L, ud->help_func) != LUA_TFUNCTION)
         { unexpected(L); return NULL; }
     push_Help_View(L, (Fl_Help_View*)p); /* downcast should be valid, here... */
