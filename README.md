@@ -1,17 +1,23 @@
-## MoonFLTK: Lua bindings for FLTK
+## MoonFLTK: Lua bindings for FLTK-1.3.5-2-ts
 
-MoonFLTK is a Lua binding library for the [Fast Light Toolkit (FLTK)](http://www.fltk.org/).
+MoonFLTK is a Lua binding library for the [Fast Light Toolkit (FLTK)](http://www.fltk.org/) and it modified for my [clone](https://github.com/rageworx/fltk-1.3.5-2-ts).
 
-It runs on GNU/Linux and on Windows (MSYS2/MinGW) and requires [Lua](http://www.lua.org/) (>=5.3)
-and [FLTK](http://www.fltk.org/software.php) (>=1.3.3).
+### Requirements
+	- G++ ( even works on MSYS2 and MingW-W64 )
+	- [Lua 5.3](http://www.lua.org/) or better
+	- [FLTK 1.3.5-2-ts](https://github.com/rageworx/fltk-1.3.5-2-ts)
 
-_Authored by:_ _[Stefano Trettel](https://www.linkedin.com/in/stetre)_
+### Original Author
+	- [Stefano Trettel](https://www.linkedin.com/in/stetre)
 
+### Forked & Modified
+	- [rageworx](https://github.com/rageworx)
+
+### LUA
 [![Lua logo](./doc/powered-by-lua.gif)](http://www.lua.org/)
 
 #### License
-
-MIT/X11 license (same as Lua). See [LICENSE](./LICENSE).
+	- MIT/X11 license (same as Lua). See [LICENSE](./LICENSE).
 
 #### Documentation
 
@@ -25,7 +31,7 @@ Setup the build environment as described [here](https://github.com/stetre/moonli
 $ git clone https://github.com/stetre/moonfltk
 $ cd moonfltk
 moonfltk$ make
-moonfltk$ make install # or 'sudo make install' (Ubuntu)
+moonfltk$ make install # or 'sudo make install' (Linux)
 ```
 
 #### Example
@@ -56,6 +62,12 @@ $ lua hello.lua
 Other examples can be found in the **examples/** directory contained in the release package
 (the **examples/fltk** subdirectory contains portings to MoonFLTK of most of the examples
 that come with the FLTK distribution).
+
+#### Tested on
+	- Linux Mint 18.3, x86.64
+	- Embedded Linux
+		- Raspberry Pi3B+ ( armhf, debian, lxde )
+		- Rock960B ( Rockchip RK3399 - aarch64, debian, lxde )
 
 #### See also
 

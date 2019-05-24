@@ -485,6 +485,9 @@ Fl_Tree_Item_Draw_Mode check_Tree_Item_Draw_Mode(lua_State *L, int arg)
 
 int push_Tree_Item_Draw_Mode(lua_State *L, Fl_Tree_Item_Draw_Mode val, int pushcode)
     {
+    // a bug fixed to missed flags -- rageworx@gmail.com
+    unsigned int flags = 0;
+
     if(pushcode)
         { lua_pushinteger(L, flags); return 1; }
 

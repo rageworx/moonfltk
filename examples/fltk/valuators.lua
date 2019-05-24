@@ -9,6 +9,7 @@ fl = require("moonfltk")
 --fl.scheme("gtk+")
 --fl.scheme("plastic")
 --fl.scheme("gleam")
+--fl.scheme("flat")
 
 function callback(o)
    print(o:label(), o:value())
