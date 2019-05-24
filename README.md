@@ -3,21 +3,21 @@
 MoonFLTK is a Lua binding library for the [Fast Light Toolkit (FLTK)](http://www.fltk.org/) and it modified for my [clone](https://github.com/rageworx/fltk-1.3.5-2-ts).
 
 ### Requirements
-	- G++ ( even works on MSYS2 and MingW-W64 )
-	- [Lua 5.3](http://www.lua.org/) or better
-	- [FLTK 1.3.5-2-ts](https://github.com/rageworx/fltk-1.3.5-2-ts)
+- G++ ( even works on MSYS2 and MingW-W64 )
+- [Lua 5.3](http://www.lua.org/) or better
+- [FLTK 1.3.5-2-ts](https://github.com/rageworx/fltk-1.3.5-2-ts)
 
 ### Original Author
-	- [Stefano Trettel](https://www.linkedin.com/in/stetre)
+- [Stefano Trettel](https://www.linkedin.com/in/stetre)
 
 ### Forked & Modified
-	- [rageworx](https://github.com/rageworx)
+- [rageworx](https://github.com/rageworx)
 
 ### LUA
 [![Lua logo](./doc/powered-by-lua.gif)](http://www.lua.org/)
 
 #### License
-	- MIT/X11 license (same as Lua). See [LICENSE](./LICENSE).
+- MIT/X11 license (same as Lua). See [LICENSE](./LICENSE).
 
 #### Documentation
 
