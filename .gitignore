@@ -3,4 +3,5 @@
 *.dll
 *.o
 core.*
+*.a
 local/

@@ -28,9 +28,9 @@ See the [Reference Manual](https://stetre.github.io/moonfltk/doc/index.html).
 Setup the build environment as described [here](https://github.com/stetre/moonlibs), then:
 
 ```sh
-$ git clone https://github.com/stetre/moonfltk
+$ git clone https://github.com/rageworx/moonfltk
 $ cd moonfltk
-moonfltk$ make
+moonfltk$ make -j 4
 moonfltk$ make install # or 'sudo make install' (Linux)
 ```
 
