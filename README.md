@@ -67,7 +67,8 @@ that come with the FLTK distribution).
 	- Linux Mint 18.3, x86.64
 	- Embedded Linux
 		- Raspberry Pi3B+ ( armhf, debian, lxde )
-		- Rock960B ( Rockchip RK3399 - aarch64, debian, lxde )
+		- Rockchip RK3399 boards ( Rock960x, Excavator - aarch64, debian, lxde )
+		- Odroid XU4 ( aarch64, Ubuntu )
 
 #### See also
 
