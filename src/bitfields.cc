@@ -483,11 +483,11 @@ Fl_Tree_Item_Draw_Mode check_Tree_Item_Draw_Mode(lua_State *L, int arg)
     return (Fl_Tree_Item_Draw_Mode )flags;
     }
 
-int push_Tree_Item_Draw_Mode(lua_State *L, Fl_Tree_Item_Draw_Mode val, int pushcode)
+int push_Tree_Item_Draw_Mode(lua_State *L, Fl_Tree_Item_Draw_Mode flags, int pushcode)
     {
     // bug fixed by origin author, from stetre's repo.
     if(pushcode)
-        { lua_pushinteger(L, val); return 1; }
+        { lua_pushinteger(L, flags); return 1; }
 
     int n = 0;
 #define CASE(CODE,str) if(flags & CODE) do { lua_pushstring(L, str); n++; } while(0)

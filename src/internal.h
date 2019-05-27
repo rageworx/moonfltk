@@ -257,7 +257,7 @@ uchar check_TreeRtti(lua_State *L, int arg);
 int push_TreeRtti(lua_State *L, uchar type);
 #if defined(FLTK_ABI_VERSION) && (FLTK_ABI_VERSION >= 10301)
 Fl_Tree_Item_Draw_Mode check_Tree_Item_Draw_Mode(lua_State *L, int arg);
-int push_Tree_Item_Draw_Mode(lua_State *L, Fl_Tree_Item_Draw_Mode val, int pushcode=1);
+int push_Tree_Item_Draw_Mode(lua_State *L, Fl_Tree_Item_Draw_Mode flags, int pushcode=1);
 #endif
 
 /* bitfields ---------------------------------------------------------------------*/
