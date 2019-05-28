@@ -44,10 +44,12 @@ ifdef TgtAdoc
 # one file only
 pdf: clean
 	@asciidoctor-pdf $(TgtAdoc).adoc -o $(TgtPdf).pdf
+
+docs: html pdf
 else
 # all .adoc files
 pdf: clean
 	@asciidoctor-pdf -a pdf-style=asciidoctor $(TgtAdoc).adoc
-endif
 
-docs: html pdf
+docs: html	
+endif

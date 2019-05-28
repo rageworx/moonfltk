@@ -6,3 +6,4 @@ core.*
 *.a
 *.html
 local/
+doc/index.html
