@@ -45,6 +45,8 @@ LIBDIR = -L/usr/lib
 LIBS = -llua
 endif
 ifdef MINGW
+INCDIR = -I/usr/local/include -I/usr/local/include/lua$(LUAVER)
+LIBDIR = -L/usr/lib
 LIBS = -llua
 endif
 
