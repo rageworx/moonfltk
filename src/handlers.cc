@@ -234,7 +234,7 @@ static int Add_fd(lua_State *L)
     {
     int fd = luaL_checkinteger(L, 1);
     int when = check_WhenFd(L, 2);
-    Fl::add_fd(fd, when, FdHandler, (void*)L);  
+    Fl::add_fd(fd, when, (Fl_FD_Handler)FdHandler, (void*)L);  
     return 0;
     }
 
